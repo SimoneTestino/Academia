@@ -9,7 +9,7 @@ The presentation is in English. It starts from the two-branch witness problem an
 
 ## Build
 
-The source is self-contained and uses XeLaTeX, Beamer, TikZ, `fontspec` and the standard AMS mathematics packages. It uses Times New Roman when available and falls back to TeX Gyre Termes. The design follows the project’s UvA presentation style.
+The source is self-contained and uses XeLaTeX, Beamer, TikZ, `fontspec`, `fontawesome5`, `adjustbox`, the TeX Gyre font files and the standard AMS mathematics packages. It uses Times New Roman when available and falls back to TeX Gyre Termes. The design follows the project’s UvA presentation style.
 
 From this directory, compile twice with a TeX distribution containing those packages:
 

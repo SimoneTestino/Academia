@@ -15,8 +15,8 @@ Master of Logic, Institute for Logic, Language and Computation, University of Am
 
 Bokai Yao, [*Set Theory with Urelements*, arXiv:2303.14274v3](https://arxiv.org/pdf/2303.14274v3). The central example and definitions are Remark 55 (p. 47 / PDF 54), Definition 57 (p. 48 / PDF 55) and Lemma 60 (pp. 49–50 / PDF 56–57). Theorem 61 (pp. 50–52 / PDF 57–59) treats Collection and fullness over ZFCU with Replacement.
 
-## Publication record
+## Revision record
 
-[PUBLICATION.json](PUBLICATION.json) records UTC timestamps and SHA-256 hashes for the exact released files. Its embedded `timestamped_payload` has an independent RFC 3161 timestamp in [PUBLICATION.tsr](PUBLICATION.tsr), with the corresponding [request](PUBLICATION.tsq). Reconstruct the signed payload as ASCII JSON with sorted keys, compact separators, `ensure_ascii=True` and no trailing newline. The register documents the SHA-256 digest and certificate sources for verification.
+[PUBLICATION.json](PUBLICATION.json) records the update time and SHA-256 hashes of the current files. This version is a working draft. Independent temporal attestation is reserved for a final version explicitly selected by the author for delivery or submission. A draft revision does not claim such an attestation.
 
-The token supports that these file bytes existed by its recorded time. It does not establish authorship or mathematical correctness. The GitHub release time is recorded separately from the timestamp service's time.
+Earlier records remain associated with their exact file versions in Git history.
