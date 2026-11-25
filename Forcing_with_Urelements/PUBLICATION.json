@@ -1,21 +1,22 @@
 {
   "schema": "skac.publication_register/1",
   "self_hash_excluded": true,
-  "recorded_at": "2026-11-25T14:58:44Z",
+  "recorded_at": "2026-11-25T15:01:52Z",
   "generated_at": "2026-11-25T14:58:44Z",
   "publication": {
-    "state": "prepared",
-    "published_at": null,
-    "commit": null,
-    "provider_time_kind": "not_observed",
-    "provider_evidence": null,
-    "verification_evidence": null,
-    "release_ref": null,
+    "state": "verified",
+    "published_at": "2026-11-25T15:01:22Z",
+    "commit": "45e34ab4881080ce423c0196efad75c299c0d988",
+    "provider_time_kind": "provider_release",
+    "provider_evidence": "https://api.github.com/repos/SimoneTestino/Academia/releases/458269611",
+    "verification_evidence": "https://github.com/SimoneTestino/Academia/commit/45e34ab4881080ce423c0196efad75c299c0d988",
+    "release_ref": "https://github.com/SimoneTestino/Academia/releases/tag/forcing-urelements-2026-11-25",
     "attestation": {
       "state": "verified",
       "attested_at": "2026-11-25T14:58:45Z",
       "evidence": "Forcing_with_Urelements/PUBLICATION.tsr"
-    }
+    },
+    "time_semantics": "published_at is the GitHub release publication time for the content commit, not an asserted first-ever upload time. Exact artifact bytes were anonymously read back and matched."
   },
   "files": [
     {
