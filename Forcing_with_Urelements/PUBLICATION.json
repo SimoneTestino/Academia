@@ -1,0 +1,133 @@
+{
+  "schema": "skac.publication_register/1",
+  "self_hash_excluded": true,
+  "recorded_at": "2026-11-25T14:58:44Z",
+  "generated_at": "2026-11-25T14:58:44Z",
+  "publication": {
+    "state": "prepared",
+    "published_at": null,
+    "commit": null,
+    "provider_time_kind": "not_observed",
+    "provider_evidence": null,
+    "verification_evidence": null,
+    "release_ref": null,
+    "attestation": {
+      "state": "verified",
+      "attested_at": "2026-11-25T14:58:45Z",
+      "evidence": "Forcing_with_Urelements/PUBLICATION.tsr"
+    }
+  },
+  "files": [
+    {
+      "path": "Forcing_with_Urelements/Formalisation/README.md",
+      "sha256": "6094f14432c1154060c6eba754e5799c44a3b5314bc1f55b04759512246ff6bb",
+      "role": "readme",
+      "document_date": "2026-11-25",
+      "updated_at": "2026-11-25T14:58:44Z"
+    },
+    {
+      "path": "Forcing_with_Urelements/PUBLICATION.tsq",
+      "sha256": "373b4e0eb1e3ece81bbd4dc5881ddc21f817747d1fa4a09247302b0853c81ee8",
+      "role": "supporting_asset",
+      "document_date": "2026-11-25",
+      "updated_at": "2026-11-25T14:58:44Z"
+    },
+    {
+      "path": "Forcing_with_Urelements/PUBLICATION.tsr",
+      "sha256": "d5a9bf998dcf7c16211bdfde7843e6987aa5bc990e678f9775beeaa419275419",
+      "role": "supporting_asset",
+      "document_date": "2026-11-25",
+      "updated_at": "2026-11-25T14:58:44Z"
+    },
+    {
+      "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.pdf",
+      "sha256": "a1cdfad357919caf19e87becd2c54b376519b1272bda57c64fa1d9aac763860d",
+      "role": "pdf",
+      "document_date": "2026-11-25",
+      "updated_at": "2026-11-25T14:58:44Z"
+    },
+    {
+      "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex",
+      "sha256": "13c997a95dbc93b0c95fd0d98eebaeb19906890bbf60ff877aad807f3bd56b74",
+      "role": "latex",
+      "document_date": "2026-11-25",
+      "updated_at": "2026-11-25T14:58:44Z"
+    },
+    {
+      "path": "Forcing_with_Urelements/Presentation/README.md",
+      "sha256": "ffd293e3aa9b319316fd753518f13a101191035a44320b58dadc61180e5cf854",
+      "role": "readme",
+      "document_date": "2026-11-25",
+      "updated_at": "2026-11-25T14:58:44Z"
+    },
+    {
+      "path": "Forcing_with_Urelements/README.md",
+      "sha256": "f2d0ca3a74072a4aa5b9a320bd0ea69f4120c7107cbed31dbb62c951ec115aad",
+      "role": "readme",
+      "document_date": "2026-11-25",
+      "updated_at": "2026-11-25T14:58:44Z"
+    },
+    {
+      "path": "README.md",
+      "sha256": "ae4729c2ee1db57c52d8ffa00cc1f116a62d9fa841eab588316e1bec763d794a",
+      "role": "readme",
+      "document_date": "2026-11-25",
+      "updated_at": "2026-11-25T14:58:44Z"
+    }
+  ],
+  "timestamped_payload": {
+    "schema": "academic.release_payload/1",
+    "files": [
+      {
+        "path": "Forcing_with_Urelements/Formalisation/README.md",
+        "bytes": 1615,
+        "sha256": "6094f14432c1154060c6eba754e5799c44a3b5314bc1f55b04759512246ff6bb"
+      },
+      {
+        "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.pdf",
+        "bytes": 507478,
+        "sha256": "a1cdfad357919caf19e87becd2c54b376519b1272bda57c64fa1d9aac763860d"
+      },
+      {
+        "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex",
+        "bytes": 116209,
+        "sha256": "13c997a95dbc93b0c95fd0d98eebaeb19906890bbf60ff877aad807f3bd56b74"
+      },
+      {
+        "path": "Forcing_with_Urelements/Presentation/README.md",
+        "bytes": 1410,
+        "sha256": "ffd293e3aa9b319316fd753518f13a101191035a44320b58dadc61180e5cf854"
+      },
+      {
+        "path": "Forcing_with_Urelements/README.md",
+        "bytes": 2065,
+        "sha256": "f2d0ca3a74072a4aa5b9a320bd0ea69f4120c7107cbed31dbb62c951ec115aad"
+      },
+      {
+        "path": "README.md",
+        "bytes": 357,
+        "sha256": "ae4729c2ee1db57c52d8ffa00cc1f116a62d9fa841eab588316e1bec763d794a"
+      }
+    ]
+  },
+  "timestamped_payload_sha256": "3b1e9ea72a28763b2c17b4fc5769aa0af43089fc030f85719fd10f1cab63751d",
+  "timestamp_evidence": {
+    "protocol": "RFC 3161",
+    "provider": "FreeTSA",
+    "endpoint": "https://freetsa.org/tsr",
+    "canonicalisation": "json.dumps(timestamped_payload, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('ascii'); no trailing newline",
+    "attested_at": "2026-11-25T14:58:45Z",
+    "scope": "Existence of the exact listed file bytes by the TSA token time; not authorship, correctness, or first GitHub publication time.",
+    "certificate_sources": [
+      {
+        "url": "https://freetsa.org/files/tsa.crt",
+        "sha256": "8bfb0305bb64e2571ca507552ef3245cb1c2fee8728e0ff8689225081ea13467"
+      },
+      {
+        "url": "https://freetsa.org/files/cacert.pem",
+        "sha256": "2151b61137ffa86bf664691ba67e7da0b19f98c758e3d228d5d8ebf27e044438"
+      }
+    ],
+    "verification": "OpenSSL token-versus-query (including nonce) and token-versus-payload-digest checks both returned Verification: OK."
+  }
+}
