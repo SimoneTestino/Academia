@@ -4,6 +4,14 @@
 % Portable derivative: exact project style and official ILLC vector logo inlined.
 % !TeX program = xelatex
 \documentclass[aspectratio=169,11pt]{beamer}
+% File-based lookup also works where system font discovery is unavailable.
+\usepackage{lmodern,fontspec}
+\defaultfontfeatures[TeX Gyre Termes]{
+  Extension=.otf,
+  UprightFont=texgyretermes-regular,
+  BoldFont=texgyretermes-bold,
+  ItalicFont=texgyretermes-italic,
+  BoldItalicFont=texgyretermes-bolditalic}
 \def\SKAOFormat{academic-presentation-uva}
 \ProvidesFile{uva-academic-beamer.tex}[2026/10/28 UvA core-template academic adaptation]
 \usepackage{lmodern}
@@ -186,7 +194,7 @@
 \subtitle{Witness names and Yao's repair}
 \author{Simone Testino}
 \institute{Master of Logic · ILLC}
-\date[25 November 2026]{Last updated: 25 November 2026}
+\date[]{Last updated: 25 November 2026}
 \hypersetup{pdftitle={Forcing with Urelements: Witness names and Yao's repair},pdfauthor={Simone Testino},pdfsubject={Based on Bokai Yao, Set Theory with Urelements, arXiv v3}}
 
 \setbeamertemplate{title page}{%
@@ -227,94 +235,117 @@ Our example adds the explicit assumption $\Atom(a)$, $\Atom(b)$ and $a\ne b$.
 \src{\S1.2, Axiom A and Definition 1}{4--5}{11--12}{11}
 \end{frame}
 
+\begin{frame}[t]{The ground model and the forcing order}
+\begin{columns}[T,onlytextwidth]
+\column{.40\textwidth}
+\centering\anchoredbranches{terminal}{terminal}
+\column{.56\textwidth}
+The \emph{ground model} $M$ satisfies set theory with urelements ($\ZFR$). In $M$ take distinct atoms $a,b$ and a pure, three-condition poset $\mathbb P=\{1,p,q\}$.
+\medskip\par
+Read $s\le r$ as “$s$ is at least as strong as $r$.” Stronger conditions lie below. Here $p\le 1$ and $q\le 1$, with $1$ weakest.
+\end{columns}
+\begin{block}{Two assumptions about $M$}
+\emph{Transitive} means that if $x\in M$ and $y\in x$, then $y\in M$.\par
+\emph{Countable} means that, from outside $M$, we can enumerate its objects. The enumeration need not belong to $M$.
+\end{block}
+\src{\S\S3.1--3.2 and Remark 55, specialised to three conditions}{44--48}{51--55}{51}
+\end{frame}
+
+\begin{frame}[t]{Which conditions can a filter contain?}
+\begin{columns}[T,onlytextwidth]
+\column{.40\textwidth}
+\centering\anchoredbranches{left choice}{right choice}
+\column{.56\textwidth}
+A \emph{filter} is a nonempty subset $G\subseteq\mathbb P$ satisfying two rules.
+\medskip\par
+\textbf{Upward closure.} If $r\in G$ and $s\in\mathbb P$ with $r\le s$, then $s\in G$. Thus $p\in G$ implies $1\in G$.
+\medskip\par
+\textbf{Directedness.} For any $r,s\in G$ there is a $t\in G$ with $t\le r$ and $t\le s$.
+\end{columns}
+\medskip\par
+Here $p\perp q$ means that no condition strengthens both. So $\{1,p,q\}$ is upward closed but fails directedness. The filters are $\{1\}$, $\{1,p\}$ and $\{1,q\}$.
+\medskip\par
+The minimal conditions $p,q$ are called \emph{poset atoms}. The urelements $a,b$ will supply the witnesses.
+\src{\S3.2 and Remark 55, worked finite example}{45--48}{52--55}{52}
+\end{frame}
+
+\begin{frame}[t]{Why there are exactly two generic filters}
+\begin{columns}[T,onlytextwidth]
+\column{.40\textwidth}
+\centering\anchoredbranches{$G_p=\{1,p\}$}{$G_q=\{1,q\}$}
+\column{.56\textwidth}
+A subset $D\subseteq\mathbb P$ is \emph{dense} if
+\par\smallskip
+\centerline{$\forall r\in\mathbb P\;\exists s\in D\;(s\le r).$}
+\medskip\par
+For $D=\{p,q\}$, the choice of $s$ can depend on $r$. Equality is allowed.
+\par\smallskip
+\centerline{$\begin{array}{l@{\quad}ccc}
+\text{start at }r & 1 & p & q \\
+\text{choose }s & p & p & q
+\end{array}$}
+\end{columns}
+\medskip\par
+A filter $G$ is $M$-generic if $G\cap D\ne\varnothing$ for every dense $D\in M$. It must meet $\{p,q\}\in M$, so $\{1\}$ fails this test.
+\medskip\par
+Only $p$ is below $p$, and only $q$ is below $q$. Every dense set therefore contains both. Each of $G_p,G_q$ meets every dense set.
+\src{\S3.2 and Remark 55, worked finite example}{45--48}{52--55}{52}
+\end{frame}
+
 \begin{frame}[t]{The question on two branches}
 \begin{columns}[T,onlytextwidth]
 \column{.40\textwidth}
-\centering\anchoredbranches{set: $\{a\}$\\witness: $a$}{set: $\{b\}$\\witness: $b$}
+\centering\anchoredbranches{set $\{a\}$\\member $a$}{set $\{b\}$\\member $b$}
 \column{.56\textwidth}
-After taking the left branch, the set has the member $a$.
-After taking the right branch, it has the member $b$.
+Suppose the set we get is $\{a\}$ in $G_p$ and $\{b\}$ in $G_q$. Once the branch is known, we can point to its only member.
 \medskip\par
-Can we specify \emph{one name in advance} for a member, valid on either branch?
+A forcing \emph{name} $\sigma$ is chosen in $M$. Its value after a filter $G$ is chosen is written $\sigma_G$.
 \end{columns}
-\medskip
-The name may have different values on different branches. We are asking for one recipe, not one fixed atom.
-\src{Remark 55; finite instance used throughout this talk}{47--48}{54--55}{54}
-\end{frame}
-
-\begin{frame}[t]{Conditions and the direction of the order}
-\begin{columns}[T,onlytextwidth]
-\column{.40\textwidth}
-\centering\anchoredbranches{\small stronger}{\small stronger}
-\column{.56\textwidth}
-We use a \emph{pure} finite poset $\mathbb P=\{1,p,q\}$, with
-\[
-p\leq1,\qquad q\leq1,\qquad p\perp q.
-\]
-$r\leq s$ means that $r$ is stronger than $s$.
-The condition $1$ is weakest. Conditions $p,q$ are terminal.
-\end{columns}
-\[
-r\perp s\ \Longleftrightarrow\ \nexists t\in\mathbb P\;(t\leq r\ \land\ t\leq s).
-\]
-An \emph{atom of a poset} means a minimal condition. The urelements $a,b$ are objects of the ground model, not conditions of this poset.
-\src{\S3.2 and Remark 55; explicit finite specialisation}{45--48}{52--55}{52}
-\end{frame}
-
-\begin{frame}[t]{Filters and genericity in this example}
-Let $M\models\ZFR$ be a countable transitive ground model, with $\mathbb P,a,b\in M$.
-A filter $G$ is nonempty, contains weaker consequences, and is directed towards stronger conditions.
-\[
-D\text{ is dense}\ \Longleftrightarrow\
-\forall r\in\mathbb P\;\exists s\leq r\;(s\in D).
-\]
-$G$ is $M$-generic if it meets every dense $D\in M$.
-\begin{block}{Here the generics can be listed completely}
-$\{p,q\}$ is dense, and every dense set contains both terminal conditions.
-Thus $G_p=\{1,p\}$ and $G_q=\{1,q\}$ are the only generic filters.
+\begin{block}{Can we choose one name before we know the branch?}
+We need the \emph{same} $\sigma$ to give $\sigma_{G_p}=a$ and $\sigma_{G_q}=b$.
 \end{block}
-Both filters already belong to $M$. This finite forcing adds no sets: it isolates a problem about names.
-\src{\S3.2; Definitions 51 and 63; finite specialisation}{45--46, 53}{52--53, 60}{52}
+Both filters already belong to $M$, so here $M[G]=M$. What varies is the value of a name inside that model.
+\src{Remark 55 and the old valuation, finite instance}{47--48}{54--55}{54}
 \end{frame}
 
-\begin{frame}[t]{Old names and their evaluation}
-Write $M^{\mathbb P}_{\#}$ for the old names in $M$. There are two kinds:
-\begin{itemize}
-\item Every atom is itself an old name, with $a_G=a$.
-\item An old set-name is a set of pairs $\langle\sigma,r\rangle$, where $\sigma$ is an old name and $r\in\mathbb P$.
-\end{itemize}
-For a set-name,
+\begin{frame}[t]{How to read an old name}
+In Yao's old system, each atom $a$ is a name with $a_G=a$ on every branch. A \emph{set-name} $\sigma$ is a set of ordered pairs.
 \[
-\tau_G=\{\sigma_G:\exists r\in G\;(\langle\sigma,r\rangle\in\tau)\}.
+\Bigl\langle\underbrace{\tau}_{\text{an old name}},\;
+                \underbrace{r}_{\text{a condition}}\Bigr\rangle
 \]
-\begin{block}{A pair contributes a member}
-The filter activates the condition $r$. The value $\sigma_G$ then becomes a member of the set $\tau_G$.
+\begin{block}{To evaluate $\sigma$ at $G$}
+Keep the pairs with $r\in G$. Evaluate each first entry at $G$ and collect its value as a member of the resulting set.
+\par\smallskip
+\centerline{$\displaystyle \sigma_G=\bigl\{\tau_G \bigm| \exists r\in G\;(\langle\tau,r\rangle\in\sigma)\bigr\}.$}
 \end{block}
-An old atom-name always has one fixed atom-value. An old set-name always has a set-value.
+For example, $\langle a,p\rangle$ contributes $a$ whenever $p\in G$. If it is the only pair kept, the outer braces give $\sigma_G=\{a\}$.
 \src{Definition 51 and the old valuation}{46--47}{53--54}{53}
 \end{frame}
 
-\begin{frame}[t]{A name for the set on each branch}
-\[
-s_{\#}=\{\langle a,p\rangle,\langle b,q\rangle\}.
-\]
-\begin{columns}[T,onlytextwidth]
-\column{.42\textwidth}
-\centering\branches{$(s_{\#})_{G_p}=\{a\}$}{$(s_{\#})_{G_q}=\{b\}$}
-\column{.54\textwidth}
-For $G_p$, only $\langle a,p\rangle$ contributes a member. Its contribution is $a$.
+\begin{frame}[t]{Evaluating the same set-name twice}
+Choose one old set-name $s_{\#}=\{\langle a,p\rangle,\langle b,q\rangle\}$.
 \medskip\par
-So the value of the whole name is $\{a\}$, not $a$.
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Filter $G$ & Pair kept & Value of $s_{\#}$ & Its member \\
+\midrule
+$G_p=\{1,p\}$ & $\langle a,p\rangle$ & $\{a\}$ & $a$ \\
+$G_q=\{1,q\}$ & $\langle b,q\rangle$ & $\{b\}$ & $b$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 \medskip\par
-The same calculation on $G_q$ gives $\{b\}$.
-\end{columns}
-\medskip
-This name already follows the branches as a \emph{set}. We still need a name for an \emph{element} of that set.
-\src{Remark 55 and the old valuation}{47--48}{54--55}{54}
+On the left, $p\in G_p$ and $q\notin G_p$. The one value to collect is $a_{G_p}=a$, giving $(s_{\#})_{G_p}=\{a\}$. On the right, only $q$ survives the test, giving $\{b\}$.
+\medskip\par
+Both filters contain $1$, and both values have a member. In this example that is exactly what $1\Vdash_{\#}\exists y\,(y\in s_{\#})$ means.
+\src{old valuation, Theorem 53 and Remark 55}{47--48}{54--55}{54}
 \end{frame}
 
 \begin{frame}[t]{Local witnesses and a uniform name}
-The local statement is true:
+Write $\OldNames$ for the old names in $M$. On each branch there is a witness.
 \[
 \forall G\in\{G_p,G_q\}\;\exists y\;(y\in(s_{\#})_G).
 \]
@@ -325,9 +356,7 @@ For example, the old name $a$ works on $G_p$ but fails on $G_q$, since $a\notin\
 \bigl(\sigma_G\in(s_{\#})_G\bigr)?
 \]
 \end{block}
-For a uniform witness, we need $\sigma_{G_p}=a$ and $\sigma_{G_q}=b$.
-\medskip\par
-Fixing $\sigma$ in advance does not fix its value. Here $1\Vdash\psi$ means that $\psi$ holds on both generic branches.
+The object $y$ in the first formula can depend on $G$. In the second, one $\sigma$ must give $\sigma_{G_p}=a$ and $\sigma_{G_q}=b$.
 \src{Remark 55; quantifier comparison for the finite example}{47--48}{54--55}{54}
 \end{frame}
 
@@ -616,13 +645,12 @@ The old names describe the singleton on either branch, but cannot name its varyi
 \medskip\par
 Mixing generalises the repair. Over $\ZFCR$, Collection gives exactly the additional gathering strength needed for fullness for all posets.
 \medskip\par
-\textbf{Based on} Bokai Yao, \emph{Set Theory with Urelements}, doctoral dissertation, University of Notre Dame, 2023, arXiv v3.
-\href{https://arxiv.org/pdf/2303.14274v3}{Full thesis and definitions}
+\textbf{Source.} Bokai Yao, \href{https://arxiv.org/pdf/2303.14274v3}{\emph{Set Theory with Urelements}}, doctoral dissertation, University of Notre Dame, arXiv v3.
 \medskip\par
-\textbf{Further work:} an Isabelle formalisation of the finite case is in preparation. No implementation or checked result is included in this presentation.
-\par\href{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements}{Project materials}\quad
-\href{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements/Formalisation}{Formalisation of the finite case}\par\medskip
-{\footnotesize Supervisor: Yurii Khomskii. Second semester 2025--2026. Updated 25 November 2026.}
+\textbf{Further work.} The \href{https://isa-afp.org/entries/Forcing.html}{Archive of Formal Proofs} develops forcing over pure ZFC in Isabelle/ZF. Our proposed finite development would compare the two valuations in the presence of atoms.
+\medskip\par
+\href{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements}{\faGithub\ Project materials}\qquad
+\href{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements/Formalisation}{\faIcon{code-branch}\ Isabelle project scope}
 \end{frame}
 
 \appendix

@@ -5,7 +5,7 @@ Last updated: 25 November 2026.
 - [Read the presentation](Forcing_with_Urelements.pdf)
 - [Download the LaTeX source](Forcing_with_Urelements.tex)
 
-The presentation is in English. It starts from the two-branch witness problem and recalls conditions, filters, genericity, names and evaluation before proving the finite example. The general theorem relating Collection to fullness follows separately.
+The presentation is in English. It first works out the two generic filters of the finite forcing order, then poses the witness question. The same traditional set-name is evaluated in both filters before Yao’s repaired names resolve the finite example. The general theorem relating Collection to fullness follows separately.
 
 ## Build
 

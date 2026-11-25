@@ -2,7 +2,7 @@
 
 A theoretical presentation on forcing with urelements, centred on a concrete question: when one branch requires an atom `a` as a witness and another requires a distinct atom `b`, can one name fixed in advance represent the required witness on both branches?
 
-The presentation recalls the forcing background needed for this example, explains the limitation of the traditional names and Yao’s repair, and then introduces the general connection between Collection and fullness. A final interpretation connects consistent renaming of atoms with questions about structure and representation.
+The presentation first determines the two generic filters of a finite forcing order. It then asks the witness question, evaluates the same traditional set-name in both filters and explains Yao’s repair. The general connection between Collection and fullness follows separately. A final interpretation connects consistent renaming of atoms with questions about structure and representation.
 
 - [Presentation: PDF, LaTeX and build instructions](Presentation/)
 - [Possible formalisation of the finite case: scope and current status](Formalisation/)

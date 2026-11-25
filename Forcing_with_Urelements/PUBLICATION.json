@@ -2,8 +2,8 @@
   "schema": "skac.publication_register/1",
   "self_hash_excluded": true,
   "version_status": "draft",
-  "recorded_at": "2026-11-25T15:28:27Z",
-  "generated_at": "2026-11-25T15:28:27Z",
+  "recorded_at": "2026-11-25T15:49:53Z",
+  "generated_at": "2026-11-25T15:49:53Z",
   "publication": {
     "state": "prepared",
     "published_at": null,
@@ -30,35 +30,35 @@
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.pdf",
-      "bytes": 513591,
-      "sha256": "d94f30e637e8811a2ccf1421a4ad0c89530cb48f3e6979c43182760beee501fa",
+      "bytes": 529383,
+      "sha256": "0b0965f27d4d18e165c2b085dc6559f1523cf74eacdfd33991debab857a5db63",
       "role": "pdf",
       "document_date": "2026-11-25",
-      "updated_at": "2026-11-25T15:28:27Z"
+      "updated_at": "2026-11-25T15:49:53Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex",
-      "bytes": 117710,
-      "sha256": "1dffd1917f4b7f0f8268b6e32360a143e3868cd5bdd62c1d37cde09143904e98",
+      "bytes": 119540,
+      "sha256": "d8a8710f6f2de3f9c96677eed2af4f9135001f7402d5ba17c0e0e98211d9277a",
       "role": "latex",
       "document_date": "2026-11-25",
-      "updated_at": "2026-11-25T15:28:27Z"
+      "updated_at": "2026-11-25T15:49:53Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/README.md",
-      "bytes": 1464,
-      "sha256": "f5b23a21cfd50eacf16972b26999d585e8be4d0b938848974f69babac32a7420",
+      "bytes": 1539,
+      "sha256": "3342325ff0430a9eb7ac28f29df6625c292ddf54b2c3b411ca76c8378c2f8a12",
       "role": "readme",
       "document_date": "2026-11-25",
-      "updated_at": "2026-11-25T15:28:27Z"
+      "updated_at": "2026-11-25T15:49:53Z"
     },
     {
       "path": "Forcing_with_Urelements/README.md",
-      "bytes": 1759,
-      "sha256": "4c3f1814899dc831b215f51c84818cff57309e9761074a5fb2b3353245b5900c",
+      "bytes": 1821,
+      "sha256": "ccb940a36aead12ee7f8bde62cf8a3d0e915e5c3050be0649787aa42e542b700",
       "role": "readme",
       "document_date": "2026-11-25",
-      "updated_at": "2026-11-25T15:28:27Z"
+      "updated_at": "2026-11-25T15:49:53Z"
     },
     {
       "path": "README.md",
