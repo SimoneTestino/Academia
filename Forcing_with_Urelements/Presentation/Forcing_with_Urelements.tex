@@ -471,7 +471,7 @@ Mixing generalises the repair. Over $\mathrm{ZFCU}_{R}$, Collection gives exactl
 \ACprojectlink{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements/Formalisation}{Isabelle project scope}
 \end{frame}
 
-\ACappendix{Proof details and a comparison}
+\ACappendix{Technical details and next steps}
 
 \begin{frame}[t]{Appendix: the mixing construction}
 For a given set function $f:D\to U^{\mathbb P}$ on an antichain, define
@@ -532,6 +532,22 @@ For each ground-model binary sequence $r$, conditions disagreeing with $r$ somew
 \medskip\par
 This is an extension adding a new set. Our terminal two-branch poset was chosen to test the naming language without that additional complication.
 \ACpages{Classical forcing background to \S3.2; comparison example}{45--46}{52--53}{52}
+\end{frame}
+
+\begin{frame}[t]{Current work and next steps}
+I am preparing an Isabelle formalisation of the two-branch example. My first step is to define the three-condition order, its two generic filters and the two ways of evaluating names.
+\begin{block}{The first two proof goals}
+\begin{enumerate}
+\item \textbf{Old names.} Prove that no single old name takes value $a$ in $G_p$ and $b$ in $G_q$.
+\item \textbf{Yao's repair.} Show that $w=\{\langle a,p\rangle,\langle b,q\rangle\}$ is a valid repaired name and prove $w_{G_p}=a$ and $w_{G_q}=b$.
+\end{enumerate}
+\end{block}
+\smallskip
+\ACprojectlink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Formalisation/README.md}{Isabelle project status}\qquad
+\ACsourcelink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex}\qquad
+\href{https://arxiv.org/pdf/2303.14274v3}{Bokai Yao's full thesis}
+\medskip\par
+\emph{Thank you for your attention.}
 \end{frame}
 
 \end{document}
