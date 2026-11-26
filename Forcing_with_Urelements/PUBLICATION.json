@@ -2,8 +2,8 @@
   "schema": "skac.publication_register/1",
   "self_hash_excluded": true,
   "version_status": "draft",
-  "recorded_at": "2026-11-26T13:22:11Z",
-  "generated_at": "2026-11-26T13:22:11Z",
+  "recorded_at": "2026-11-26T13:30:23Z",
+  "generated_at": "2026-11-26T13:30:23Z",
   "publication": {
     "state": "prepared",
     "published_at": null,
@@ -30,43 +30,43 @@
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.pdf",
-      "bytes": 288139,
-      "sha256": "50e131febb69d285a41e9f1fd88845754bcb73c228ea9ec60628072ada249d61",
+      "bytes": 288420,
+      "sha256": "b9a24b542e69a127fe45f1e77aeb9af48011193cd87320ec70ec2b6663f347a1",
       "role": "pdf",
       "document_date": "2026-11-26",
-      "updated_at": "2026-11-26T13:22:11Z"
+      "updated_at": "2026-11-26T13:30:23Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex",
-      "bytes": 25979,
-      "sha256": "8ab454039600fd67118b24be217c2f116b08c6a4b269681a03f153ecf5def1e9",
+      "bytes": 26046,
+      "sha256": "3de7869585fd3ee47983b8599b06c9c1af852a35763b4beac5ae1b553a7af489",
       "role": "latex",
       "document_date": "2026-11-26",
-      "updated_at": "2026-11-26T13:22:11Z"
+      "updated_at": "2026-11-26T13:30:23Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements_Dark.pdf",
-      "bytes": 289075,
-      "sha256": "6b9f8f8ca6f19ba0b70eb96420097b9f6b6ebcfe85d3b86c20cc292b0ef8b9a7",
+      "bytes": 289361,
+      "sha256": "2ba435a54c2f98a2147714c79fa6d209e35d8cdb4411b82362edd32782e0ec20",
       "role": "pdf",
       "document_date": "2026-11-26",
-      "updated_at": "2026-11-26T13:22:11Z"
+      "updated_at": "2026-11-26T13:30:23Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements_Dark.tex",
-      "bytes": 25978,
-      "sha256": "991b0596db0ff1dc65f932bf110c88146d9d657ea2280be0e364686cdf8be821",
+      "bytes": 26045,
+      "sha256": "a341d969508b9808c6bf3a26f476079e5e206f4d009b8cd245e38f468e97a6d9",
       "role": "latex",
       "document_date": "2026-11-26",
-      "updated_at": "2026-11-26T13:22:11Z"
+      "updated_at": "2026-11-26T13:30:23Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/README.md",
-      "bytes": 3291,
-      "sha256": "6a85735dcf05361ab34397581a382446c3c49dc374767ee665258a4f1c7441c8",
+      "bytes": 3313,
+      "sha256": "26d94ec6c9da579b6376374190d1ac71abf4f0a5878fb74a73e6880900b2cc2a",
       "role": "readme",
       "document_date": "2026-11-26",
-      "updated_at": "2026-11-26T13:22:11Z"
+      "updated_at": "2026-11-26T13:30:23Z"
     },
     {
       "path": "Forcing_with_Urelements/README.md",
