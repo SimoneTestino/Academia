@@ -1,6 +1,6 @@
 # Forcing with Urelements — Presentation
 
-Updated 26 November 2026. This edition adds the ILLC wordmark to the cover and section outlines.
+Updated 26 November 2026. The cover and four section outlines now place the linked UvA affiliation and ILLC wordmark together in one masthead. Each outline highlights the current section.
 
 - [Read the bright presentation (PDF)](Forcing_with_Urelements.pdf)
 - [Read the dark presentation (PDF)](Forcing_with_Urelements_Dark.pdf)
@@ -16,7 +16,7 @@ The cover links to the checked finite Isabelle/HOL teaching exercise. The final 
 
 These `.tex` files publish the presentation content and import the author’s privately maintained `ac-illc-presentation` package. The package, reusable macros and styles, and local `.texinputs` files are not distributed. The public source is readable; reproducing its original rendering requires the current private package and its dependencies in a TeX search path. These public files alone are not a standalone build.
 
-The bright main selects `\usepackage[light,text-affiliations]{ac-illc-presentation}`. The dark main selects `\usepackage[dark,text-affiliations]{ac-illc-presentation}`. Their document bodies are identical. The optional `.texinputs` lookup is only a local editor hook; it is unnecessary when the private package is otherwise available to TeX.
+The bright main selects `\usepackage[light,illc-artwork]{ac-illc-presentation}[2026/11/26]`. The dark main selects `\usepackage[dark,illc-artwork]{ac-illc-presentation}[2026/11/26]`. Their document bodies are identical. The optional `.texinputs` lookup is only a local editor hook; it is unnecessary when the private package is otherwise available to TeX.
 
 With that package available locally, run the corresponding XeLaTeX command twice from this directory so section navigation and bookmarks settle:
 
