@@ -1,0 +1,553 @@
+% !TeX program = xelatex
+% FORMAT_ID: academic-presentation-uva
+% FORMAT_VARIANT: core-template
+\documentclass[aspectratio=169,11pt]{beamer}
+% Local editors can resolve the private package from a project dependency directory.
+\InputIfFileExists{.texinputs/ac-editor-inputs.tex}{}{}
+\usepackage[dark,text-affiliations]{ac-illc-presentation}
+
+\title[Forcing with Urelements]{Forcing with\\Urelements}
+\subtitle{Witness names and Yao's repair}
+\author{Simone Testino}
+\ACauthorurl{https://github.com/SimoneTestino}
+\ACprogramme{Master of Logic}{https://msclogic.illc.uva.nl/programme/mol/}
+\ACsupervisor{Yurii Khomskii}{https://www.illc.uva.nl/People/person/3457/Dr-Yurii-Khomskii}
+\ACsemester{Second semester 2025--2026}
+\date[]{Last updated: 25 November 2026}
+\ACsource{Bokai Yao}{Yao}{Set Theory with Urelements}
+  {https://arxiv.org/pdf/2303.14274v3}{arXiv v3 (2023)}
+\ACmaterials{%
+  \ACgithublink{https://github.com/SimoneTestino/Academia}{GitHub}\quad
+  \ACsourcelink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex}\par
+  \ACprojectlink{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements/Formalisation}{Isabelle project in preparation}}
+\ACappendixname{Appendix}
+\hypersetup{pdftitle={Forcing with Urelements: Witness names and Yao's repair},
+  pdfauthor={Simone Testino},pdfsubject={Based on Bokai Yao, Set Theory with Urelements, arXiv v3}}
+
+\begin{document}
+\ACtitleframe
+
+\ACsection{A forcing refresher}{}
+\begin{frame}[t]{Atoms, sets and the empty set}
+The language contains membership $\in$ and a primitive atom predicate $\mathcal A$.
+\[
+\mathcal A(a)\ \Longrightarrow\ \forall x\;(x\notin a),
+\qquad \operatorname{Set}(x)\ \equiv\ \neg\mathcal A(x).
+\]
+\begin{block}{Having no members does not determine an object}
+Two distinct atoms $a,b$ and the set $\varnothing$ can all have no members.
+Extensionality identifies \emph{sets} with the same members.
+\end{block}
+Yao's base theory requires neither the existence of an atom nor a set of all atoms.
+\medskip\par
+Our example adds the explicit assumption $\mathcal A(a)$, $\mathcal A(b)$ and $a\ne b$.
+\ACpages{\S1.2, Axiom A and Definition 1}{4--5}{11--12}{11}
+\end{frame}
+
+\begin{frame}[t]{The ground model and the forcing order}
+\begin{ACcolumns}
+\ACdiagramcolumn
+\centering\ACanchoredbranches{1}{p}{q}{terminal}{terminal}
+\ACtextcolumn
+The \emph{ground model} $M$ satisfies set theory with urelements ($\mathrm{ZFU}_{R}$). In $M$ take distinct atoms $a,b$ and a pure, three-condition poset $\mathbb P=\{1,p,q\}$. Its only strict comparisons are $p<1$ and $q<1$.
+\end{ACcolumns}
+\begin{block}{Two assumptions about $M$}
+\emph{Transitive} means that if $x\in M$ and $y\in x$, then $y\in M$.\par
+\emph{Countable} means that, from outside $M$, we can enumerate its objects. The enumeration need not belong to $M$.
+\end{block}
+\ACpages{\S\S3.1--3.2 and Remark 55, specialised to three conditions}{44--48}{51--55}{51}
+\end{frame}
+
+\begin{frame}[t]{Which conditions can a filter contain?}
+\begin{ACcolumns}
+\ACdiagramcolumn
+\centering\ACanchoredbranches{1}{p}{q}{left choice}{right choice}
+\ACtextcolumn
+\begin{block}{Filter}
+A filter is a nonempty $G\subseteq\mathbb P$ with both properties.
+\par\smallskip
+\emph{Upward closure.} If $r\in G$ and $r\le s$ in $\mathbb P$, then $s\in G$.
+\par\smallskip
+\emph{Directedness.} For all $r,s\in G$ there is a $t\in G$ with $t\le r$ and $t\le s$.
+\end{block}
+\end{ACcolumns}
+\smallskip\par
+Upward closure puts the weaker condition $1$ in every filter. Since $p\perp q$, no condition strengthens both, so $\{1,p,q\}$ fails directedness. The filters are $\{1\}$, $\{1,p\}$ and $\{1,q\}$.
+\smallskip\par
+The \emph{poset atoms} $p,q$ are minimal conditions. The witnesses $a,b$ are urelements.
+\ACpages{\S3.2 and Remark 55, worked finite example}{45--48}{52--55}{52}
+\end{frame}
+
+\begin{frame}[t]{Why there are exactly two generic filters}
+\begin{ACcolumns}
+\ACdiagramcolumn
+\centering\ACanchoredbranches{1}{p}{q}{$G_p=\{1,p\}$}{$G_q=\{1,q\}$}
+\ACtextcolumn
+\begin{block}{Density and genericity}
+A subset $D\subseteq\mathbb P$ is \emph{dense} if
+\par\smallskip
+\centerline{$\forall r\in\mathbb P\;\exists s\in D\;(s\le r).$}
+\par\smallskip
+A filter $G$ is \emph{$M$-generic} if $G\cap D\ne\varnothing$ for every dense $D\in M$.
+\end{block}
+\end{ACcolumns}
+\medskip\par
+\begin{ACcolumns}
+\ACdiagramcolumn
+\textbf{Testing $D=\{p,q\}$}\par\smallskip
+$\begin{array}{@{}l@{\quad}ccc}
+\text{start at }r & 1 & p & q\\
+\text{choose }s & p & p & q
+\end{array}$\par\smallskip
+Here $s$ depends on $r$, and equality is allowed.
+\ACtextcolumn
+Since $\{p,q\}\in M$ is dense, a generic must contain $p$ or $q$. Directedness rules out both at once.
+\smallskip\par
+Each terminal condition is its own only strengthening. Every dense set contains both, so $G_p$ and $G_q$ are generic.
+\end{ACcolumns}
+\ACpages{\S3.2 and Remark 55, worked finite example}{45--48}{52--55}{52}
+\end{frame}
+
+\begin{frame}[t]{The question on two branches}
+\begin{ACcolumns}
+\ACdiagramcolumn
+\centering\ACanchoredbranches{1}{p}{q}{set $\{a\}$\\member $a$}{set $\{b\}$\\member $b$}
+\ACtextcolumn
+Suppose the set we get is $\{a\}$ in $G_p$ and $\{b\}$ in $G_q$. Once the branch is known, we can point to its only member.
+\medskip\par
+A forcing \emph{name} $\sigma$ is chosen in $M$. Its value after a filter $G$ is chosen is written $\sigma_G$.
+\end{ACcolumns}
+\begin{block}{Can we choose one name before we know the branch?}
+We need the \emph{same} $\sigma$ to give $\sigma_{G_p}=a$ and $\sigma_{G_q}=b$.
+\end{block}
+Both filters already belong to $M$, so here $M[G]=M$. What varies is the value of a name inside that model.
+\ACpages{Remark 55 and the old valuation, finite instance}{47--48}{54--55}{54}
+\end{frame}
+
+\ACsection{Why old names fail}{Can one old name pick the member on both branches?}
+\begin{frame}[t]{How to read an old name}
+In Yao's old system, each atom $a$ is a name with $a_G=a$ on every branch. A \emph{set-name} $\sigma$ is a set of ordered pairs.
+\[
+\Bigl\langle\underbrace{\tau}_{\text{an old name}},\;
+                \underbrace{r}_{\text{a condition}}\Bigr\rangle
+\]
+\begin{block}{To evaluate $\sigma$ at $G$}
+Keep the pairs with $r\in G$. Evaluate each first entry at $G$ and collect its value as a member of the resulting set.
+\par\smallskip
+\centerline{$\displaystyle \sigma_G=\bigl\{\tau_G \bigm| \exists r\in G\;(\langle\tau,r\rangle\in\sigma)\bigr\}.$}
+\end{block}
+For example, $\langle a,p\rangle$ contributes $a$ whenever $p\in G$. If it is the only pair kept, the outer braces give $\sigma_G=\{a\}$.
+\ACpages{Definition 51 and the old valuation}{46--47}{53--54}{53}
+\end{frame}
+
+\begin{frame}[t]{Evaluating the same set-name twice}
+Choose one old set-name $s_{\#}=\{\langle a,p\rangle,\langle b,q\rangle\}$.
+\medskip\par
+\begin{ACcomparison}{@{}lccc@{}}
+Filter $G$ & Pair kept & Value of $s_{\#}$ & Its member \\
+\midrule
+$G_p=\{1,p\}$ & $\langle a,p\rangle$ & $\{a\}$ & $a$ \\
+$G_q=\{1,q\}$ & $\langle b,q\rangle$ & $\{b\}$ & $b$ \\
+\end{ACcomparison}
+\medskip\par
+On the left, $p\in G_p$ and $q\notin G_p$. The one value to collect is $a_{G_p}=a$, giving $(s_{\#})_{G_p}=\{a\}$. On the right, only $q$ survives the test, giving $\{b\}$.
+\medskip\par
+Both filters contain $1$, and both values have a member. In this example that is exactly what $1\Vdash_{\#}\exists y\,(y\in s_{\#})$ means.
+\ACpages{old valuation, Theorem 53 and Remark 55}{47--48}{54--55}{54}
+\end{frame}
+
+\begin{frame}[t]{Local witnesses and a uniform name}
+Write $M^{\mathbb P}_{\#}$ for the old names in $M$. On each branch there is a witness.
+\[
+\forall G\in\{G_p,G_q\}\;\exists y\;(y\in(s_{\#})_G).
+\]
+For example, the old name $a$ works on $G_p$ but fails on $G_q$, since $a\notin\{b\}$.
+\begin{block}{The uniform question quantifies over names first}
+\[
+\exists\sigma\in M^{\mathbb P}_{\#}\;\forall G\in\{G_p,G_q\}\;
+\bigl(\sigma_G\in(s_{\#})_G\bigr)?
+\]
+\end{block}
+The object $y$ in the first formula can depend on $G$. In the second, one $\sigma$ must give $\sigma_{G_p}=a$ and $\sigma_{G_q}=b$.
+\ACpages{Remark 55; quantifier comparison for the finite example}{47--48}{54--55}{54}
+\end{frame}
+
+\begin{frame}[t]{Why every old witness name fails}
+Suppose an old name $\sigma$ works on both branches. There are only two cases.
+\begin{enumerate}
+\item If $\sigma$ is an atom, then $\sigma_{G_p}=\sigma_{G_q}=\sigma$.
+It cannot equal both $a$ and $b$, since $a\ne b$.
+\item If $\sigma$ is a set-name, both values are sets.
+Neither value can equal the urelement required on its branch.
+\end{enumerate}
+\begin{block}{The failure is a failure of fullness}
+\[
+1\Vdash_{\#}\exists y\;(y\in s_{\#}),\qquad
+\nexists\sigma\in M^{\mathbb P}_{\#}\;1\Vdash_{\#}\sigma\in s_{\#}.
+\]
+\end{block}
+Here forcing at $1$ means truth on both generic branches. The old forcing theorem and truth lemma still hold.
+\ACpages{Theorems 53--54 and Remark 55}{47--48}{54--55}{54}
+\end{frame}
+
+\ACsection{Yao's repair and mixing}{How can one name take two different atom values?}
+\begin{frame}[t]{Two roles for pairs in repaired names}
+Every repaired name is a \emph{set} of pairs $\langle y,r\rangle$.
+Here $y$ is either a urelement or another repaired name.
+\begin{block}{The first component determines the role}
+\begin{tabular}{@{}ll@{}}
+$y=a$ is an atom & proposes $a$ as the value of the whole name\\[7pt]
+$y=\sigma$ is a name & proposes $\sigma_G$ as a member of its set-value
+\end{tabular}
+\end{block}
+The condition $r$ still controls when the proposal is active.
+\medskip\par
+Atoms themselves are no longer names. This opens the possibility of a set-name whose value is an atom.
+\ACpages{Definition 57}{48}{55}{55}
+\end{frame}
+
+\begin{frame}[t]{Compatibility of repaired names}
+\begin{block}{Compatibility requirement}
+For two pairs in one repaired name $\tau$,
+\[
+\left.
+\begin{gathered}
+\langle a,r\rangle,\langle y,s\rangle\in\tau,\\
+\mathcal A(a),\quad a\ne y
+\end{gathered}
+\right\}\ \Longrightarrow\ r\perp s.
+\]
+\end{block}
+\begin{itemize}
+\item Different atom-values must be attached to incompatible conditions.
+\item An atom-value and a proposed member must also be attached to incompatible conditions: a name $y$ is a set, so $y\ne a$.
+\end{itemize}
+A filter can activate at most one atom-value. When it does, it activates no member proposal.
+\ACpages{Definition 57, clause (ii)}{48}{55}{55}
+\end{frame}
+
+\begin{frame}[t]{Evaluating a repaired name}
+\begin{block}{Valuation at $G$}
+\[
+\tau_G=
+\begin{cases}
+a,&\text{if }\langle a,r\rangle\in\tau,\ \mathcal A(a),\ r\in G,\\[4pt]
+\{\sigma_G:\langle\sigma,r\rangle\in\tau,\ \sigma\text{ a name},\ r\in G\},
+&\text{if no atom proposal is active.}
+\end{cases}
+\]
+\end{block}
+The compatibility rule makes the active atom unique and rules out active member proposals in that case.
+\medskip\par
+If no atom proposal is active, valuation collects the active members in the familiar way. If no pair is active, the value is $\varnothing$.
+\ACpages{Definition 63, using Definition 57}{48, 53}{55, 60}{60}
+\end{frame}
+
+\begin{frame}[t]{Names for an atom and its singleton}
+\begin{ACcolumns}
+\ACequalcolumn
+\textbf{A name for the atom}
+\[
+\check a=\{\langle a,1\rangle\}.
+\]
+The first component is the atom $a$.
+Its pair proposes the whole value.
+\[
+(\check a)_G=a.
+\]
+\ACequalcolumn
+\textbf{A name for its singleton}
+\[
+\check{\{a\}}=\{\langle\check a,1\rangle\}.
+\]
+The first component is the name $\check a$.
+Its pair proposes a member.
+\[
+(\check{\{a\}})_G=\{a\}.
+\]
+\end{ACcolumns}
+\medskip
+Replacing $a$ by $\check a$ changes the role of the pair. The braces around a name alone do not tell us whether its value is an atom or a set.
+\ACpages{Definitions 57 and 63}{48, 53}{55, 60}{55}
+\end{frame}
+
+\begin{frame}[t]{A repaired witness on both branches}
+\[
+\tau=\{\langle a,p\rangle,\langle b,q\rangle\},\qquad
+s=\{\langle\check a,p\rangle,\langle\check b,q\rangle\}.
+\]
+\begin{ACcolumns}
+\ACdiagramcolumn
+\centering\ACbranchdiagram{1}{p}{q}{$\tau_{G_p}=a$\\$s_{G_p}=\{a\}$}{$\tau_{G_q}=b$\\$s_{G_q}=\{b\}$}
+\ACtextcolumn
+$p\perp q$ makes $\tau$ a valid repaired name.
+The name $s$ has only member proposals.
+\medskip\par
+On either branch, $\tau_G\in s_G$. Hence
+\[
+1\Vdash\tau\in s.
+\]
+The displayed set of pairs for $\tau$ is the same as for $s_{\#}$, but its semantics has changed.
+\end{ACcolumns}
+\ACpages{Definitions 57 and 63; finite instance of Lemma 60}{48--50, 53}{55--57, 60}{55}
+\end{frame}
+
+\begin{frame}[t]{Mixing extends this construction}
+Let $U^{\mathbb P}$ be the repaired names. On the antichain $D=\{p,q\}$, set
+\[
+f(p)=\check a,\qquad f(q)=\check b.
+\]
+The name $\tau$ is a mixture: $p\Vdash\tau=\check a$ and $q\Vdash\tau=\check b$.
+\begin{block}{Yao's Mixing Lemma, Lemma 60}
+For a given set function $f:D\to U^{\mathbb P}$, with $D$ an antichain, there is a repaired name $\mu$ such that
+\[
+\forall r\in D\qquad r\Vdash\mu=f(r).
+\]
+\end{block}
+Mixing starts with a set function $f$ and needs neither Collection nor Choice. Gathering witness names is a separate step.
+\ACpages{Lemma 60, statement and construction}{49--50}{56--57}{56}
+\end{frame}
+
+\begin{frame}[t]{Structure, renaming and representation}
+Swap $a$ and $b$ consistently, leaving our pure poset fixed.
+The same calculations give the same existence and impossibility results, with the atom labels exchanged.
+\begin{block}{A structuralist reading of the example}
+The phenomenon depends on the relation between branches, names and distinct witnesses, rather than on the labels of the atoms.
+\end{block}
+Here both constructions give $M[G]=M$ and use the same atoms. Changing the naming language changes which branch-dependent values admit one uniform name.
+\medskip\par
+Yao extends permutations of a set of atoms to membership automorphisms. The interpretation in this slide is our reading of the example, not a philosophical theorem attributed to Yao.
+\ACpages{Permutations of atoms; Remark 55; Definition 57}{6, 47--48}{13, 54--55}{13}
+\end{frame}
+
+\ACsection{Collection and fullness}{When does every forced existential have a witness name?}
+\begin{frame}[t]{Atoms, classes and gathering witnesses}
+The formula $\mathcal A(x)$ defines the class of all atoms. It need not define a set.
+\begin{itemize}
+\item If some set contains all atoms, Separation gives the set of all atoms. That set may be infinite.
+\item If no set contains them all, the class of atoms is proper, relative to the model.
+\end{itemize}
+\begin{block}{The gathering question is more specific}
+For each input $x$ in a set $w$, suppose some witness $y$ exists.
+Can one set contain a suitable witness for every $x$?
+\end{block}
+A proper class of atoms does not by itself refute this principle. The two-branch example needs only two distinct atoms; the general gathering problem is additional.
+\ACpages{Definition 1; Definition 3 and Proposition 5}{5--6}{12--13}{12}
+\end{frame}
+
+\begin{frame}[t]{Replacement and Collection}
+For a set $w$ and a fixed parameter $u$, Yao writes:
+\medskip\par
+\textbf{Replacement}
+\[
+\bigl(\forall x\in w\;\exists!y\;\varphi(x,y,u)\bigr)
+\ \Longrightarrow\
+\bigl(\exists v\;\forall x\in w\;\exists y\in v\;\varphi(x,y,u)\bigr).
+\]
+\textbf{Collection}
+\[
+\bigl(\forall x\in w\;\exists y\;\varphi(x,y,u)\bigr)
+\ \Longrightarrow\
+\bigl(\exists v\;\forall x\in w\;\exists y\in v\;\varphi(x,y,u)\bigr).
+\]
+The same set $v$ serves every $x$. It need not be unique and need not contain all possible witnesses. The formula's remaining parameters stay fixed.
+\medskip\par
+Each displayed implication is universally quantified over $w,u$, and each admissible formula gives an instance of the scheme.
+\ACpages{\S1.2: Replacement at the end of p.~4; Collection at the start of p.~5}{4--5}{11--12}{11}
+\end{frame}
+
+\begin{frame}[t]{A common container for witnesses}
+Let $w=\{1,2\}$ and let $\varphi(x,y)$ mean $y=10x$ or $y=10x+1$.
+\[
+\begin{array}{c|c|c}
+x&\text{possible witnesses}&\text{one witness in }v=\{10,21\}\\\hline
+1&10,11&10\\[3pt]
+2&20,21&21
+\end{array}
+\]
+\begin{itemize}
+\item Every $x$ has a witness, so Collection's antecedent holds.
+\item Witnesses are not unique, so Replacement's antecedent fails for this formula.
+\item The displayed container satisfies the common conclusion.
+\end{itemize}
+A false antecedent does not make the Replacement implication false. This example illustrates the schemes; it does not separate their strength.
+\ACpages{\S1.2; numerical illustration of the two schemes}{4--5}{11--12}{11}
+\end{frame}
+
+\begin{frame}[t]{Which scheme implies which?}
+Write $U$ for unique witnesses, $E$ for existing witnesses and $C$ for a common witness container.
+\[
+U\Longrightarrow E,\qquad
+\text{Replacement: }U\Longrightarrow C,\qquad
+\text{Collection: }E\Longrightarrow C.
+\]
+\begin{block}{Collection implies Replacement}
+Assume $U$. Then $E$ holds. Collection gives $C$.
+Uniqueness was assumed, not inferred from Collection.
+\end{block}
+In pure ZF, Replacement also proves Collection using bounds on witness ranks.
+In Yao's setting, Replacement need not prove Collection, even with Choice. With a proper class of atoms, a rank bound alone need not provide a set container.
+\ACpages{Definition 1 and following paragraph; Proposition 5}{5--6}{12--13}{12}
+\end{frame}
+
+\begin{frame}[t]{Fullness for a general forcing poset}
+\begin{block}{Fullness}
+For each condition $p$, each formula and each tuple of name parameters,
+\[
+p\Vdash\exists y\;\varphi(y,\vec\tau)
+\quad\Longrightarrow\quad
+\exists\sigma\in U^{\mathbb P}\;p\Vdash\varphi(\sigma,\vec\tau).
+\]
+\end{block}
+The name $\sigma$ may depend on $p$ and the formula. The condition $p$ stays fixed.
+\medskip\par
+The existential forcing clause gives witness names densely below $p$. Fullness asks for one name working already at $p$.
+\medskip\par
+The repaired two-branch construction proves this one instance directly. It does not establish fullness for arbitrary formulas or posets.
+\ACpages{Definition 58(8); Theorem 61}{49--52}{56--59}{56}
+\end{frame}
+
+\begin{frame}[t]{Yao's general equivalence}
+The base theory explicitly includes Choice:
+\[
+\mathrm{ZFU}_{R}=\mathrm{ZU}+\text{Replacement},\qquad
+\mathrm{ZFCU}_{R}=\mathrm{ZFU}_{R}+\mathrm{AC}.
+\]
+Here $\mathrm{ZU}$ is Zermelo theory with atoms and Foundation.
+\begin{block}{Theorem 61, over $\mathrm{ZFCU}_{R}$}
+\[
+\text{Collection}\quad\Longleftrightarrow\quad
+\begin{gathered}
+\text{for every forcing poset }\mathbb P,\\
+\text{the repaired forcing relation is full.}
+\end{gathered}
+\]
+\end{block}
+The quantifier over \emph{all} posets matters. This is a general theorem about the repaired machinery, separate from the finite example.
+\ACpages{Definition 1; Theorem 61}{5, 50--52}{12, 57--59}{57}
+\end{frame}
+
+\begin{frame}[t]{Collection, Choice and mixing}
+Suppose $p\Vdash\exists y\;\varphi(y)$, with fixed name parameters.
+\begin{enumerate}
+\item Choice gives a maximal antichain $D$ of conditions below $p$ admitting local witness names.
+\item Collection puts enough of those names into one set.
+\item Choice selects a name $f(r)$ for each $r\in D$.
+\item Mixing combines the given function $f$ into one name $\mu$.
+\item Density below $p$ gives $p\Vdash\varphi(\mu)$.
+\end{enumerate}
+\begin{block}{The roles are distinct}
+Collection gathers names. Choice selects them. Mixing combines them.
+\end{block}
+For the finite example, the two local names were already explicitly available. The general argument must first obtain a set of names.
+\ACpages{Theorem 61, forward implication}{50--51}{57--58}{57}
+\end{frame}
+
+\begin{frame}[t]{Fullness, truth and preservation}
+\begin{description}
+\item[Fullness] A forced existential has a witness name under the \emph{same} condition.
+\item[Truth lemma] Truth in one extension corresponds to forcing by \emph{some} condition in its generic filter:
+\[
+M[G]\models\varphi(\vec\tau_G)
+\ \Longleftrightarrow\
+\exists r\in G\;M\models r\Vdash\varphi(\vec\tau).
+\]
+\item[Preservation] Axioms holding in the ground model continue to hold in the extension, under the relevant theorem's assumptions.
+\end{description}
+The old names have a truth lemma despite failing fullness. The repaired forcing theorem over $\mathrm{ZFU}_{R}$ does not assume Choice or Collection.
+\ACpages{Theorems 53, 61 and 66; preservation in \S3.2.4}{47, 50--62}{54, 57--69}{61}
+\end{frame}
+
+\begin{frame}[t]{Conclusions and the next question}
+The old names describe the singleton on either branch, but cannot name its varying atom-member uniformly. Yao's repaired names can do both.
+\medskip\par
+Mixing generalises the repair. Over $\mathrm{ZFCU}_{R}$, Collection gives exactly the additional gathering strength needed for fullness for all posets.
+\medskip\par
+\textbf{Source.} Bokai Yao, \href{https://arxiv.org/pdf/2303.14274v3}{\emph{Set Theory with Urelements}}, doctoral dissertation, University of Notre Dame, arXiv v3.
+\medskip\par
+\textbf{Further work.} The \href{https://isa-afp.org/entries/Forcing.html}{Archive of Formal Proofs} develops forcing over pure ZFC in Isabelle/ZF. Our proposed finite development would compare the two valuations in the presence of atoms.
+\medskip\par
+\ACgithublink{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements}{Project materials}\qquad
+\ACprojectlink{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements/Formalisation}{Isabelle project scope}
+\end{frame}
+
+\ACappendix{Technical details and next steps}
+
+\begin{frame}[t]{Appendix: the mixing construction}
+For a given set function $f:D\to U^{\mathbb P}$ on an antichain, define
+\[
+\mu=\bigcup_{r\in D}
+\{\langle y,t\rangle:t\in\mathbb P,\ \exists s\;(\langle y,s\rangle\in f(r)\ \land\ t\leq r,s)\}.
+\]
+Pairs from $f(r)$ are restricted to common strengthenings with their assigned branch $r$.
+\begin{itemize}
+\item Within one branch, the original name's compatibility condition prevents conflicts.
+\item Across different branches, the antichain prevents conflicts.
+\item Under a branch $r\in D$, the resulting name agrees with $f(r)$.
+\end{itemize}
+Thus $r\Vdash\mu=f(r)$ for every $r\in D$.
+\ACpages{Lemma 60, proof}{49--50}{56--57}{56}
+\end{frame}
+
+\begin{frame}[t]{Appendix: ranks and available atoms}
+For a \emph{set} $A$ of atoms, the hierarchy $V_\alpha(A)$ has set-sized levels.
+Proposition 5 proves restricted Collection: if every input has a witness in $V(A)$, one common set contains sufficient witnesses.
+\begin{block}{Why Replacement suffices in that restricted situation}
+Assign each input the least ordinal level containing a witness.
+Replacement gathers these ordinals; a sufficiently high level gives the container.
+\end{block}
+For pure ZF use $A=\varnothing$. For a proper class of atoms, there need not be one set $A$ accommodating all required witnesses.
+\medskip\par
+Here $\operatorname{ker}(x)$ is the set of atoms in the transitive closure of $\{x\}$. In the reverse direction of Theorem 61, the witness name's kernel together with the poset's kernel bounds the atoms needed. Proposition 5 gives Collection.
+\ACpages{Definition 2; Proposition 5; Theorem 61, reverse implication}{5--6, 51--52}{12--13, 58--59}{13}
+\end{frame}
+
+\begin{frame}[t]{Appendix: what the extension preserves}
+For a countable transitive $M\models\mathrm{ZFU}_{R}$ and an $M$-generic $G$ over set forcing $\mathbb P\in M$:
+\[
+\begin{array}{c|c}
+\text{ground model}&\text{extension}\\\hline
+\mathrm{ZFU}_{R}&\mathrm{ZFU}_{R}\\[3pt]
+\mathrm{ZFCU}_{R}&\mathrm{ZFCU}_{R}\\[3pt]
+\mathrm{ZFCU}_{R}+\text{Collection}&\mathrm{ZFCU}_{R}+\text{Collection}
+\end{array}
+\]
+There are no new atoms or ordinals. New sets of existing atoms may appear.
+The kernel bound $\operatorname{ker}(\tau_G)\subseteq\operatorname{ker}(\tau)$ limits which atoms a name can use.
+\medskip\par
+These are preservation results, not a reformulation of fullness.
+\ACpages{Lemmas 64--65; Theorems 67, 71 and 73}{53, 56--60}{60, 63--67}{60}
+\end{frame}
+
+\begin{frame}[t]{Appendix: when forcing really adds a set}
+For comparison, let $\mathbb P=2^{<\omega}$ be finite binary strings, ordered by extension.
+\[
+\langle0,1,0\rangle\leq\langle0,1\rangle\leq\langle0\rangle.
+\]
+For each $n$, strings of length at least $n$ form a dense set. A generic filter determines
+\[
+c=\bigcup G:\omega\longrightarrow\{0,1\}.
+\]
+For each ground-model binary sequence $r$, conditions disagreeing with $r$ somewhere form a dense set in $M$. Thus $c\ne r$ for every such $r$.
+\medskip\par
+This is an extension adding a new set. Our terminal two-branch poset was chosen to test the naming language without that additional complication.
+\ACpages{Classical forcing background to \S3.2; comparison example}{45--46}{52--53}{52}
+\end{frame}
+
+\begin{frame}[t]{Current work and next steps}
+I am preparing an Isabelle formalisation of the two-branch example. My first step is to define the three-condition order, its two generic filters and the two ways of evaluating names.
+\begin{block}{The first two proof goals}
+\begin{enumerate}
+\item \textbf{Old names.} Prove that no single old name takes value $a$ in $G_p$ and $b$ in $G_q$.
+\item \textbf{Yao's repair.} Show that $w=\{\langle a,p\rangle,\langle b,q\rangle\}$ is a valid repaired name and prove $w_{G_p}=a$ and $w_{G_q}=b$.
+\end{enumerate}
+\end{block}
+\smallskip
+\ACprojectlink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Formalisation/README.md}{Isabelle project status}\qquad
+\ACsourcelink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex}\qquad
+\href{https://arxiv.org/pdf/2303.14274v3}{Bokai Yao's full thesis}
+\medskip\par
+\emph{Thank you for your attention.}
+\end{frame}
+
+\end{document}

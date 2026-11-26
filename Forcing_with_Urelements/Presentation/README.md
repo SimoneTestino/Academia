@@ -1,27 +1,30 @@
 # Forcing with Urelements — Presentation
 
-Last updated: 25 November 2026.
+Last updated: 26 November 2026. Mathematical content dated 25 November 2026.
 
-- [Read the presentation](Forcing_with_Urelements.pdf)
-- [Read the content LaTeX source](Forcing_with_Urelements.tex)
+- [Read the bright presentation (PDF)](Forcing_with_Urelements.pdf)
+- [Read the dark presentation (PDF)](Forcing_with_Urelements_Dark.pdf)
+- [Read the bright content LaTeX source](Forcing_with_Urelements.tex)
+- [Read the dark content LaTeX source](Forcing_with_Urelements_Dark.tex)
+- [Interactive handbook and teaching companion](https://simonetestino.pages.dev/research/forcing-with-urelements/first-step/)
 
-The presentation is in English. It first works out the two generic filters of the finite forcing order, then poses the witness question. The same traditional set-name is evaluated in both filters before Yao’s repaired names resolve the finite example. The general theorem relating Collection to fullness follows separately. Clickable section links and PDF bookmarks connect the main parts of the talk and the appendix.
+Both editions contain the same 35 English slides, with the same mathematical body, bookmarks and page destinations. The current exports use linked textual institutional affiliations. The presentation first works out the two generic filters of the finite forcing order, then poses the witness question. The same traditional set-name is evaluated in both filters before Yao’s repaired names resolve the finite example. The general theorem relating Collection to fullness follows separately.
 
 ## Content source and rendering
 
-This revision publishes the presentation content. The `.tex` imports the author’s privately maintained `ac-illc-presentation` package. That package and its reusable macros, styles and institutional logo source assets are not included in the current revision.
+These `.tex` files publish the presentation content and import the author’s privately maintained `ac-illc-presentation` package. The package, reusable macros and styles, and local `.texinputs` files are not distributed. The public source is readable; reproducing its original rendering requires the current private package and its dependencies in a TeX search path. These public files alone are not a standalone build.
 
-The content source can be read directly. Reproducing the original PDF requires XeLaTeX, the private package and its dependencies installed in a local TeX search path; the public files alone are not a standalone build. The optional `.texinputs` lookup in the source is a local workspace hook, whose files are not distributed.
+The bright main selects `\usepackage[light,text-affiliations]{ac-illc-presentation}`. The dark main selects `\usepackage[dark,text-affiliations]{ac-illc-presentation}`. Their document bodies are identical. The optional `.texinputs` lookup is only a local editor hook; it is unnecessary when the private package is otherwise available to TeX.
 
-With the author’s package available locally, compile twice from this directory:
+With that package available locally, run the corresponding XeLaTeX command twice from this directory so section navigation and bookmarks settle:
 
 ```sh
 mkdir -p /tmp/forcing-with-urelements-build
 xelatex -halt-on-error -interaction=nonstopmode -output-directory=/tmp/forcing-with-urelements-build Forcing_with_Urelements.tex
-xelatex -halt-on-error -interaction=nonstopmode -output-directory=/tmp/forcing-with-urelements-build Forcing_with_Urelements.tex
+xelatex -halt-on-error -interaction=nonstopmode -output-directory=/tmp/forcing-with-urelements-build Forcing_with_Urelements_Dark.tex
 ```
 
-The resulting PDF is `/tmp/forcing-with-urelements-build/Forcing_with_Urelements.pdf`. The published PDF can be read without the rendering package.
+The PDFs can be read without the rendering package. Earlier editions retain their exact history.
 
 ## Source references
 
