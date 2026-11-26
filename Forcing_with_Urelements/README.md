@@ -5,7 +5,7 @@ A theoretical presentation on forcing with urelements, centred on a concrete que
 The presentation first determines the two generic filters of a finite forcing order. It then asks the witness question, evaluates the same traditional set-name in both filters and explains Yao’s repair. The general connection between Collection and fullness follows separately. A final interpretation connects consistent renaming of atoms with questions about structure and representation.
 
 - [Presentation: PDF, content LaTeX and rendering requirements](Presentation/)
-- [Possible formalisation of the finite case: scope and current status](Formalisation/)
+- [Checked Isabelle/HOL teaching exercise and research-code status](Formalisation/)
 - [Interactive English handbook and teaching companion](https://simonetestino.pages.dev/research/forcing-with-urelements/first-step/)
 - [Project overview and all website resources](https://simonetestino.pages.dev/research/forcing-with-urelements/)
 

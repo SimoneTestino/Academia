@@ -2,8 +2,8 @@
   "schema": "skac.publication_register/1",
   "self_hash_excluded": true,
   "version_status": "draft",
-  "recorded_at": "2026-11-26T11:14:55Z",
-  "generated_at": "2026-11-26T11:14:55Z",
+  "recorded_at": "2026-11-26T12:00:26Z",
+  "generated_at": "2026-11-26T12:00:26Z",
   "publication": {
     "state": "prepared",
     "published_at": null,
@@ -22,59 +22,59 @@
   "files": [
     {
       "path": "Forcing_with_Urelements/Formalisation/README.md",
-      "bytes": 1615,
-      "sha256": "6094f14432c1154060c6eba754e5799c44a3b5314bc1f55b04759512246ff6bb",
+      "bytes": 2084,
+      "sha256": "be07d456a9e01f377a83a00b339dc51c495505d069cc7b21e6380c886932748e",
       "role": "readme",
-      "document_date": "2026-11-25",
-      "updated_at": "2026-11-25T15:28:27Z"
+      "document_date": "2026-11-26",
+      "updated_at": "2026-11-26T12:00:26Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.pdf",
-      "bytes": 167777,
-      "sha256": "7591045e9be4091f1a907c0aafbc3bf3b8b62f714ce3d5e2340769d40f9cab12",
+      "bytes": 168099,
+      "sha256": "ebf6b5190ff0c75dd748cfa10571638da3d5e2a9f2af519f6b63e2fd58a3c2ce",
       "role": "pdf",
-      "document_date": "2026-11-25",
-      "updated_at": "2026-11-26T11:14:55Z"
+      "document_date": "2026-11-26",
+      "updated_at": "2026-11-26T12:00:26Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex",
-      "bytes": 25523,
-      "sha256": "a3f53640b66fd226996fd9b05dd83feeb1d8814ec6474837b09ecacee40d644f",
+      "bytes": 25737,
+      "sha256": "316eb1b9ea385d243a0a7429f6b7cfd62968a7dc20590a186a11d2a1d150e810",
       "role": "latex",
-      "document_date": "2026-11-25",
-      "updated_at": "2026-11-26T11:14:55Z"
+      "document_date": "2026-11-26",
+      "updated_at": "2026-11-26T12:00:26Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements_Dark.pdf",
-      "bytes": 168654,
-      "sha256": "72b3d0b44a83ebdda073010c58e2fe97b56a58f15da956310be486614b9c3620",
+      "bytes": 168978,
+      "sha256": "98beb210b863c7d35eeaa29c9fbd975e909a5eed9c8c51817e21b60833084f28",
       "role": "pdf",
-      "document_date": "2026-11-25",
-      "updated_at": "2026-11-26T11:14:55Z"
+      "document_date": "2026-11-26",
+      "updated_at": "2026-11-26T12:00:26Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/Forcing_with_Urelements_Dark.tex",
-      "bytes": 25522,
-      "sha256": "988675f197c663335d835bc5c75cc3cc8a1e6b958ec2ab8bf31dc3b73fa20414",
+      "bytes": 25736,
+      "sha256": "2eef8dbc55ab9300904a5988679858203ca1bf2b6c6c8f0ee9d9cb7a82004a4b",
       "role": "latex",
-      "document_date": "2026-11-25",
-      "updated_at": "2026-11-26T11:14:55Z"
+      "document_date": "2026-11-26",
+      "updated_at": "2026-11-26T12:00:26Z"
     },
     {
       "path": "Forcing_with_Urelements/Presentation/README.md",
-      "bytes": 2602,
-      "sha256": "fca2bdb8fa4abaae702522000b322206d5e2c356dde34bbfbabf2702fea0e92c",
+      "bytes": 3054,
+      "sha256": "8f67e9adeb6d916b1cd675fc214434fe1295263986d7fae41be9c11f0938eced",
       "role": "readme",
       "document_date": "2026-11-26",
-      "updated_at": "2026-11-26T11:14:55Z"
+      "updated_at": "2026-11-26T12:00:26Z"
     },
     {
       "path": "Forcing_with_Urelements/README.md",
-      "bytes": 2081,
-      "sha256": "84a4c730e7c4753a773e384b0dd24487216841429192bf8cb8a15c7d455067fa",
+      "bytes": 2077,
+      "sha256": "b371f303ca4106c3d6a98f9a0ce242f331656116c0bf9b2f3ab438b65ca30508",
       "role": "readme",
       "document_date": "2026-11-26",
-      "updated_at": "2026-11-26T10:37:49Z"
+      "updated_at": "2026-11-26T12:00:26Z"
     },
     {
       "path": "README.md",

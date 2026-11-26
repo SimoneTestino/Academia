@@ -13,13 +13,13 @@
 \ACprogramme{Master of Logic}{https://msclogic.illc.uva.nl/programme/mol/}
 \ACsupervisor{Yurii Khomskii}{https://www.illc.uva.nl/People/person/3457/Dr-Yurii-Khomskii}
 \ACsemester{Second semester 2025--2026}
-\date[]{Last updated: 25 November 2026}
+\date[]{Last updated: 26 November 2026}
 \ACsource{Bokai Yao}{Yao}{Set Theory with Urelements}
   {https://arxiv.org/pdf/2303.14274v3}{arXiv v3 (2023)}
 \ACmaterials{%
   \ACgithublink{https://github.com/SimoneTestino/Academia}{GitHub}\quad
   \ACsourcelink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex}\par
-  \ACprojectlink{https://github.com/SimoneTestino/Academia/tree/main/Forcing_with_Urelements/Formalisation}{Isabelle project in preparation}}
+  \ACprojectlink{https://simonetestino.pages.dev/research/forcing-with-urelements/first-step/\#learning-cells}{Checked Isabelle/HOL exercise}}
 \ACappendixname{Appendix}
 \hypersetup{pdftitle={Forcing with Urelements: Witness names and Yao's repair},
   pdfauthor={Simone Testino},pdfsubject={Based on Bokai Yao, Set Theory with Urelements, arXiv v3}}
@@ -535,15 +535,18 @@ This is an extension adding a new set. Our terminal two-branch poset was chosen 
 \end{frame}
 
 \begin{frame}[t]{Current work and next steps}
-I am preparing an Isabelle formalisation of the two-branch example. My first step is to define the three-condition order, its two generic filters and the two ways of evaluating names.
-\begin{block}{The first two proof goals}
-\begin{enumerate}
-\item \textbf{Old names.} Prove that no single old name takes value $a$ in $G_p$ and $b$ in $G_q$.
-\item \textbf{Yao's repair.} Show that $w=\{\langle a,p\rangle,\langle b,q\rangle\}$ is a valid repaired name and prove $w_{G_p}=a$ and $w_{G_q}=b$.
-\end{enumerate}
+A finite Isabelle/HOL teaching exercise now checks the old-name obstruction and the repaired selector on this three-condition order.
+\begin{block}{What is checked in the finite model}
+\begin{itemize}
+\item \textbf{Old names.} No single old name takes value $a$ in $G_p$ and $b$ in $G_q$.
+\item \textbf{Yao's repair.} The selector $w=\{\langle a,p\rangle,\langle b,q\rangle\}$ is admissible, with $w_{G_p}=a$ and $w_{G_q}=b$.
+\end{itemize}
 \end{block}
-\smallskip
-\ACprojectlink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Formalisation/README.md}{Isabelle project status}\qquad
+My study and independent research development are ongoing. The general Collection/fullness theorem remains mathematical reading.
+\smallskip\par
+\ACprojectlink{https://simonetestino.pages.dev/research/forcing-with-urelements/first-step/\#learning-cells}{Checked teaching exercise}\qquad
+\ACprojectlink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Formalisation/README.md}{Research-code status}
+\smallskip\par
 \ACsourcelink{https://github.com/SimoneTestino/Academia/blob/main/Forcing_with_Urelements/Presentation/Forcing_with_Urelements.tex}\qquad
 \href{https://arxiv.org/pdf/2303.14274v3}{Bokai Yao's full thesis}
 \medskip\par

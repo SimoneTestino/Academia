@@ -1,27 +1,33 @@
-# Formalisation of the finite witness example
+# Isabelle teaching example and research-code status
 
-Last updated: 25 November 2026.
+Last updated: 26 November 2026.
 
-## Current status
+## Checked finite teaching exercise
 
-Preparatory work is ongoing: the mathematical scope is being specified and studied. Implementation has not started; there are no Isabelle or Lean files or machine-checked results in this project.
+A finite Isabelle/HOL teaching companion is available with the [interactive English handbook](https://simonetestino.pages.dev/research/forcing-with-urelements/first-step/#learning-cells). It has been checked using Isabelle2025-2. The [project overview](https://simonetestino.pages.dev/research/forcing-with-urelements/#isabelle) describes its scope and provides the downloadable companion.
 
-## Proposed scope
+For the explicit three-condition order and its specified recursive finite name grammars, the companion checks:
 
-A possible future development would formalise the finite two-branch example from Bokai Yao’s [*Set Theory with Urelements*, arXiv v3](https://arxiv.org/pdf/2303.14274v3):
+1. Exactly the two generic filters of the terminal branches.
+2. The traditional singleton-valued name and the absence of a uniform atom-valued witness among the old names.
+3. The admissibility and branch values of the repaired selector, with atom-valued and singleton-valued names kept distinct.
+4. Admissible mixing of arbitrary finite repaired names assigned to these two terminal branches.
 
-1. Define the two-branch forcing order and the filters corresponding to its terminal branches.
-2. Represent the traditional names and their evaluation, keeping atoms distinct from sets.
-3. Show that the set-name evaluates to `{a}` on one branch and `{b}` on the other, while no single traditional name is a witness on both when `a` and `b` are distinct atoms.
-4. Represent Yao’s repaired names, verify their compatibility requirement, and construct a single name evaluating to `a` or `b` according to the branch.
-5. Consider invariance under consistent renaming of atoms and, subsequently, a finite family of terminal branches.
+The handbook's browser interactions are finite explanatory previews. The Isabelle/HOL session in the companion supplies the machine-checked proofs.
 
-The implementation would need to justify its correspondence with Yao’s definitions. A finite typed model would be a study of this example, rather than a formalisation of the general forcing theorem or of Collection being equivalent to fullness for all posets. The provisional target is Isabelle/HOL; the exact encoding remains open.
+## Independent research development
+
+My study and independent research development are ongoing. This repository currently publishes the presentation and its content LaTeX; research proof code is not published here. The teaching companion is distributed on the personal website. Research-code publication remains a later step, after I can explain the development myself.
+
+The finite exercise does not formalise the general forcing theorem, Lemma 60 for arbitrary posets, or Theorem 61 equating Collection and fullness for all posets. These remain source-based mathematical reading. No completed Lean development is claimed.
 
 ## Mathematical references
+
+Bokai Yao, [*Set Theory with Urelements*, arXiv v3](https://arxiv.org/pdf/2303.14274v3):
 
 - Remark 55: p. 47 / PDF 54.
 - Definition 57: p. 48 / PDF 55.
 - Lemma 60: pp. 49–50 / PDF 56–57.
+- Theorem 61: pp. 50–52 / PDF 57–59.
 
 [Return to the project](../)

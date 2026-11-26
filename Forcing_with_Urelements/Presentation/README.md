@@ -1,6 +1,6 @@
 # Forcing with Urelements — Presentation
 
-Last updated: 26 November 2026. Mathematical content dated 25 November 2026.
+Last updated: 26 November 2026. The mathematical exposition is unchanged from 25 November; this edition updates the resource and project-status text.
 
 - [Read the bright presentation (PDF)](Forcing_with_Urelements.pdf)
 - [Read the dark presentation (PDF)](Forcing_with_Urelements_Dark.pdf)
@@ -9,6 +9,8 @@ Last updated: 26 November 2026. Mathematical content dated 25 November 2026.
 - [Interactive handbook and teaching companion](https://simonetestino.pages.dev/research/forcing-with-urelements/first-step/)
 
 Both editions contain the same 35 English slides, with the same mathematical body, bookmarks and page destinations. The current exports use linked textual institutional affiliations. The presentation first works out the two generic filters of the finite forcing order, then poses the witness question. The same traditional set-name is evaluated in both filters before Yao’s repaired names resolve the finite example. The general theorem relating Collection to fullness follows separately.
+
+The cover links to the checked finite Isabelle/HOL teaching exercise. The final page distinguishes that finite result from my ongoing study and independent research development; the general theorem remains mathematical reading. It links to the handbook, the [research-code status](../Formalisation/), this content source and Yao’s thesis. No proof code appears in the slides.
 
 ## Content source and rendering
 
