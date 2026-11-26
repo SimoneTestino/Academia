@@ -10,7 +10,7 @@ Updated 26 November 2026. The cover and four section outlines place the Master o
 
 Both editions contain the same 35 English slides, with the same mathematical body, bookmarks and page destinations. The cover and section outlines link to the university, the programme and the institute. The ILLC artwork comes from the [Master of Logic thesis template](https://github.com/m4lvin/illc-mol-thesis-template/tree/ae51780e48702831acaf1fd082facd541c236f1a). The presentation first works out the two generic filters of the finite forcing order, then poses the witness question. The same traditional set-name is evaluated in both filters before Yao’s repaired names resolve the finite example. The general theorem relating Collection to fullness follows separately.
 
-The cover links to the checked finite Isabelle/HOL teaching exercise. The final page distinguishes that finite result from my ongoing study and independent research development; the general theorem remains mathematical reading. It links to the handbook, the [research-code status](../Formalisation/), this content source and Yao’s thesis. No proof code appears in the slides.
+The cover links to the checked finite Isabelle/HOL teaching exercise. The final page distinguishes that finite result from my ongoing study and independent research development; the general theorem remains mathematical reading. It links to the handbook, the [research-code status](../Formalisation/), this content source and Yao’s thesis. No proof code appears in the slides. The last slide also carries a clickable QR code for the [project page](https://simonetestino.pages.dev/research/forcing-with-urelements/), where readers can open the handbook or choose either presentation edition.
 
 ## Content source and rendering
 
