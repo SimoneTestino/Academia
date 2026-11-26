@@ -1,6 +1,6 @@
 # Forcing with Urelements — Presentation
 
-Last updated: 26 November 2026. The mathematical exposition is unchanged from 25 November; this edition updates the resource and project-status text.
+Last updated: 26 November 2026. The mathematical exposition is unchanged from 25 November; this edition updates the resource and project-status text, and adds a contact link on the closing slide.
 
 - [Read the bright presentation (PDF)](Forcing_with_Urelements.pdf)
 - [Read the dark presentation (PDF)](Forcing_with_Urelements_Dark.pdf)
