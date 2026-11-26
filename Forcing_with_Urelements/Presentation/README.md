@@ -1,6 +1,6 @@
 # Forcing with Urelements — Presentation
 
-Last updated: 26 November 2026. The mathematical exposition is unchanged from 25 November; this edition updates the resource and project-status text, and adds a contact link on the closing slide.
+Updated 26 November 2026. This edition adds the ILLC wordmark to the cover and section outlines.
 
 - [Read the bright presentation (PDF)](Forcing_with_Urelements.pdf)
 - [Read the dark presentation (PDF)](Forcing_with_Urelements_Dark.pdf)
@@ -8,7 +8,7 @@ Last updated: 26 November 2026. The mathematical exposition is unchanged from 25
 - [Read the dark content LaTeX source](Forcing_with_Urelements_Dark.tex)
 - [Interactive handbook and teaching companion](https://simonetestino.pages.dev/research/forcing-with-urelements/first-step/)
 
-Both editions contain the same 35 English slides, with the same mathematical body, bookmarks and page destinations. The current exports use linked textual institutional affiliations. The presentation first works out the two generic filters of the finite forcing order, then poses the witness question. The same traditional set-name is evaluated in both filters before Yao’s repaired names resolve the finite example. The general theorem relating Collection to fullness follows separately.
+Both editions contain the same 35 English slides, with the same mathematical body, bookmarks and page destinations. The cover and section outlines link the University of Amsterdam name and the ILLC wordmark. The graphic comes from the [Master of Logic thesis template](https://github.com/m4lvin/illc-mol-thesis-template/tree/ae51780e48702831acaf1fd082facd541c236f1a). The presentation first works out the two generic filters of the finite forcing order, then poses the witness question. The same traditional set-name is evaluated in both filters before Yao’s repaired names resolve the finite example. The general theorem relating Collection to fullness follows separately.
 
 The cover links to the checked finite Isabelle/HOL teaching exercise. The final page distinguishes that finite result from my ongoing study and independent research development; the general theorem remains mathematical reading. It links to the handbook, the [research-code status](../Formalisation/), this content source and Yao’s thesis. No proof code appears in the slides.
 
