@@ -1,6 +1,6 @@
 # Forcing with Urelements — Presentation
 
-Updated 26 November 2026. The cover and four section outlines place the Master of Logic programme under the University of Amsterdam at the left, with the ILLC wordmark at the right. Each outline highlights the current section.
+Updated 26 November 2026. The cover and four section outlines place the Master of Logic programme under the University of Amsterdam at the left, with the ILLC wordmark at the right. Each outline highlights the current section. A progress bar and a page counter on every slide show the current page and the total number of pages.
 
 - [Read the bright presentation (PDF)](Forcing_with_Urelements.pdf)
 - [Read the dark presentation (PDF)](Forcing_with_Urelements_Dark.pdf)
