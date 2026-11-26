@@ -6,10 +6,12 @@ The presentation first determines the two generic filters of a finite forcing or
 
 - [Presentation: PDF, content LaTeX and rendering requirements](Presentation/)
 - [Possible formalisation of the finite case: scope and current status](Formalisation/)
+- [Interactive English handbook and teaching companion](https://simonetestino.pages.dev/research/forcing-with-urelements/first-step/)
+- [Project overview and all website resources](https://simonetestino.pages.dev/research/forcing-with-urelements/)
 
 ## Context
 
-Master of Logic, Institute for Logic, Language and Computation, University of Amsterdam. Supervisor: Yurii Khomskii. Academic period: second semester, 2025–2026. Last updated: 25 November 2026.
+Master of Logic, Institute for Logic, Language and Computation, University of Amsterdam. Supervisor: Yurii Khomskii. Academic period: second semester, 2025–2026. Last updated: 26 November 2026.
 
 ## Principal source
 

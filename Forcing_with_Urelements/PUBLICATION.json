@@ -2,8 +2,8 @@
   "schema": "skac.publication_register/1",
   "self_hash_excluded": true,
   "version_status": "draft",
-  "recorded_at": "2026-11-25T16:52:23Z",
-  "generated_at": "2026-11-25T16:52:23Z",
+  "recorded_at": "2026-11-26T10:37:49Z",
+  "generated_at": "2026-11-26T10:37:49Z",
   "publication": {
     "state": "prepared",
     "published_at": null,
@@ -54,11 +54,11 @@
     },
     {
       "path": "Forcing_with_Urelements/README.md",
-      "bytes": 1833,
-      "sha256": "98675a9381ffba937344e61ca51ad6e782462c02982b02c8bd23303dd50d8bb8",
+      "bytes": 2081,
+      "sha256": "84a4c730e7c4753a773e384b0dd24487216841429192bf8cb8a15c7d455067fa",
       "role": "readme",
-      "document_date": "2026-11-25",
-      "updated_at": "2026-11-25T16:35:21Z"
+      "document_date": "2026-11-26",
+      "updated_at": "2026-11-26T10:37:49Z"
     },
     {
       "path": "README.md",
