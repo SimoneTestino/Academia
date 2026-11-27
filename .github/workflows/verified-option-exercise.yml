@@ -45,7 +45,7 @@ jobs:
       - name: Build bound theorem against pinned MathFin
         working-directory: Certified_Option_Exercise/lean/mathfin
         run: |
-          lake update
+          lake update --keep-toolchain
           lake exe cache get Mathlib.Data.Rat.Cast.Order Mathlib.Algebra.CharP.Defs Mathlib.Analysis.Complex.Exponential Mathlib.Tactic.LinearCombination
           lake build MathFinBridge
           lake env leanchecker --fresh MathFinBridge

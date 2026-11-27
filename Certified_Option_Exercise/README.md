@@ -42,6 +42,21 @@ or continuous-time discretisation error.
 
 ## Further comparison and reading
 
+The [MathFin bridge](lean/mathfin/MathFinBridge.lean) proves
+`price_eq_bermudan` and `bounds_bermudan_of_check`. Under the stated
+input equalities, the rational tree price equals the MathFin Bermudan
+price, and accepted bounds enclose it. The bridge pins MathFin v2.0.0
+and uses Lean v4.35.0, the toolchain chosen by that library.
+
+```sh
+cd mathfin
+lake build MathFinBridge
+lake env leanchecker --fresh MathFinBridge
+```
+
+Run that block from the `lean/` directory. Lake resolves the locked
+dependencies for the bridge separately from the CLI package.
+
 - [Online project page](https://simonetestino.pages.dev/academic/research-projects/certified-option-exercise/)
 - [The handbook’s two-step example](https://simonetestino.pages.dev/academic/courses/computational-finance/handbook/#lecture-14)
 - [MathFin’s binomial pricing model](https://github.com/formal-applied-math/formal-mathfin/blob/v2.0.0/MathFin/Models/Binomial/Model.lean#L212-L250)

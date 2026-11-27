@@ -1,6 +1,7 @@
 name = "certified-option-exercise-mathfin"
 version = "0.1.0"
 defaultTargets = ["MathFinBridge"]
+fixedToolchain = true
 
 [[require]]
 name = "certified-option-exercise"

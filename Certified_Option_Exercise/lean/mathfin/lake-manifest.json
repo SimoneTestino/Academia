@@ -161,4 +161,4 @@
    "configFile": "lakefile.toml"}],
  "name": "«certified-option-exercise-mathfin»",
  "lakeDir": ".lake",
- "fixedToolchain": false}
+ "fixedToolchain": true}

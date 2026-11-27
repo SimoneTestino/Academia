@@ -23,9 +23,9 @@ private theorem cast_step_some (payoff hold : Rat) :
     (step (some payoff) hold : ℝ) = max (payoff : ℝ) (hold : ℝ) := by
   by_cases hp : payoff ≤ hold
   · have hCast : (payoff : ℝ) ≤ (hold : ℝ) := Rat.cast_le.mpr hp
-    simp [step, hp, max_eq_right hCast]
+    rw [step, ite_eq_left hp, max_eq_right hCast]
   · have hCast : (hold : ℝ) ≤ (payoff : ℝ) := Rat.cast_le.mpr (Rat.le_of_lt (Rat.not_le.mp hp))
-    simp [step, hp, max_eq_left hCast]
+    rw [step, ite_eq_right hp, max_eq_left hCast]
 
 /-- Exact rational backward induction agrees with MathFin when the model inputs agree.
 The probability and discount hypotheses make the calibration of the finite model explicit. -/
@@ -45,12 +45,12 @@ theorem price_eq_bermudan (exerciseDates : Nat → Bool) (discount q upFactor do
     simp only [crrTree, Tree.price]
     by_cases eligible : exerciseDates (n + 1) = true
     · have hm : n + 1 ∈ {i : Nat | exerciseDates i = true} := eligible
-      rw [MathFin.bermudanPrice_succ_of_mem hm]
-      simp only [eligible, if_true, cast_step_some, cast_continuation, ih, hDiscount, hProb,
+      rw [ite_eq_left eligible, MathFin.bermudanPrice_succ_of_mem hm]
+      simp only [cast_step_some, cast_continuation, ih, hDiscount, hProb,
         hPayoff, Rat.cast_mul, MathFin.binomialOptionPriceOnePeriod]
     · have hm : n + 1 ∉ {i : Nat | exerciseDates i = true} := eligible
-      rw [MathFin.bermudanPrice_succ_of_notMem hm]
-      simp only [eligible, if_false, step, cast_continuation, ih, hDiscount, hProb,
+      rw [ite_eq_right eligible, MathFin.bermudanPrice_succ_of_notMem hm]
+      simp only [step, cast_continuation, ih, hDiscount, hProb,
         Rat.cast_mul, MathFin.binomialOptionPriceOnePeriod]
 
 /-- Accepted executable certificates bound the corresponding MathFin Bermudan price. -/
