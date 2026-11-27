@@ -1,0 +1,51 @@
+name: Check Certified Option Exercise
+
+on:
+  push:
+    branches: [main, review/certified-option-exercise]
+    paths:
+      - Certified_Option_Exercise/**
+      - .github/workflows/verified-option-exercise.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: Certified_Option_Exercise/lean
+          auto-config: "false"
+          build: "true"
+          use-mathlib-cache: "false"
+          leanchecker: "true"
+          leanchecker-args: "--fresh CertifiedOptionExercise"
+  mathfin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      MATHLIB_NO_CACHE_ON_UPDATE: "1"
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: Certified_Option_Exercise/lean/mathfin
+          auto-config: "false"
+          build: "false"
+          use-mathlib-cache: "false"
+      - name: Build bound theorem against pinned MathFin
+        working-directory: Certified_Option_Exercise/lean/mathfin
+        run: |
+          lake update --keep-toolchain
+          lake exe cache get Mathlib.Data.Rat.Cast.Order Mathlib.Algebra.CharP.Defs Mathlib.Analysis.Complex.Exponential Mathlib.Tactic.LinearCombination
+          lake build MathFinBridge
+          lake env leanchecker --fresh MathFinBridge

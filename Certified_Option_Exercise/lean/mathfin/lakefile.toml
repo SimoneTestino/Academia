@@ -1,0 +1,16 @@
+name = "certified-option-exercise-mathfin"
+version = "0.1.0"
+defaultTargets = ["MathFinBridge"]
+fixedToolchain = true
+
+[[require]]
+name = "certified-option-exercise"
+path = ".."
+
+[[require]]
+name = "MathFin"
+git = "https://github.com/formal-applied-math/formal-mathfin.git"
+rev = "55e29a93e75f10b40f61f45c78a6058b2938045f"
+
+[[lean_lib]]
+name = "MathFinBridge"

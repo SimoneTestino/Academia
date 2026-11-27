@@ -1,0 +1,43 @@
+{
+  "model": {
+    "kind": "node",
+    "discount": {"num": 20, "den": 21},
+    "upProbability": {"num": 5, "den": 8},
+    "exercise": null,
+    "up": {
+      "kind": "node",
+      "discount": {"num": 20, "den": 21},
+      "upProbability": {"num": 5, "den": 8},
+      "exercise": 0,
+      "up": {"kind": "terminal", "payoff": 0},
+      "down": {"kind": "terminal", "payoff": 4}
+    },
+    "down": {
+      "kind": "node",
+      "discount": {"num": 20, "den": 21},
+      "upProbability": {"num": 5, "den": 8},
+      "exercise": 20,
+      "up": {"kind": "terminal", "payoff": 4},
+      "down": {"kind": "terminal", "payoff": 36}
+    }
+  },
+  "certificate": {
+    "kind": "node",
+    "lower": {"num": 1175, "den": 147},
+    "upper": {"num": 1175, "den": 147},
+    "up": {
+      "kind": "node",
+      "lower": {"num": 10, "den": 7},
+      "upper": {"num": 10, "den": 7},
+      "up": {"kind": "terminal", "lower": 0, "upper": 0},
+      "down": {"kind": "terminal", "lower": 4, "upper": 4}
+    },
+    "down": {
+      "kind": "node",
+      "lower": 20,
+      "upper": 20,
+      "up": {"kind": "terminal", "lower": 4, "upper": 4},
+      "down": {"kind": "terminal", "lower": 36, "upper": 36}
+    }
+  }
+}
